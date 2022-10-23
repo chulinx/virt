@@ -6,12 +6,8 @@ if [ ! -d mnt ]; then
 fi
 
 if [ ! -d linux ]; then
-    wget -O linux.tar.xz https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$(cat linux.version).tar.xz
-    mkdir linux
-    cd linux
-    tar xf ../linux.tar.xz --strip-components=1
-    cd ..
-    rm linux.tar.xz
+    git clone --branch linux-5.15.y --depth 1 git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
+    git fetch --depth 1 tag v5.18.19
 fi
 cd linux
 cp ../linux.config .config

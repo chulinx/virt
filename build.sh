@@ -1,8 +1,8 @@
 #!/bin/sh
 
 if [ ! -d mnt ]; then
-   apt update
-   apt install -y wget xz-utils patch bc make clang llvm lld flex bison libelf-dev libncurses-dev libssl-dev
+   sudo apt update
+   sudo apt install -y wget xz-utils patch bc make clang llvm lld flex bison libelf-dev libncurses-dev libssl-dev
 fi
 
 if [ ! -d linux ]; then
